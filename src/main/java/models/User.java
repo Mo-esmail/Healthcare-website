@@ -10,25 +10,73 @@ package models;
  * @author maher
  */
 public class User {
-    private String ID, firstName, lastName, username, password, role, usercol;
-
-    public String getID() {
-        return ID;
-    }
-
-    public User( String username,String password,String firstName, String lastName, String role, String usercol) {
-        this.firstName = firstName;
-        this.password=password;
-        this.lastName = lastName;
+    private String username, firstName, lastName, password, role;
+    private String mobnumber , government, city, address;
+    
+    public User(String username, String firstName, String lastName, String password, String role, String mobnumber, String government, String city, String address) {
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
         this.role = role;
-        this.usercol = usercol;
+        this.mobnumber = mobnumber;
+        this.government = government;
+        this.city = city;
+        this.address = address;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+
+    public String getGovernment() {
+        return government;
     }
 
+    
+    public void setGovernment(String government) {
+        this.government = government;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getMobnumber() {
+        return mobnumber;
+    }
+
+    public void setMobnumber(String mobnumber) {
+        this.mobnumber = mobnumber;
+    }
+
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+  
     public String getFirstName() {
         return firstName;
     }
@@ -70,12 +118,5 @@ public class User {
     public void setrole(String role) {
         this.role = role;
     }
-
-    public String getusercol() {
-        return usercol;
-    }
-
-    public void setusercol(String usercol) {
-        this.usercol = usercol;
-    }
 }
+

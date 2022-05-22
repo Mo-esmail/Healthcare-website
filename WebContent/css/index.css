@@ -1,0 +1,201 @@
+*{margin:0;padding: 0;}
+html{height: 100%;}
+body
+{background-color: #E7ECEF;height: 100%;}
+.container{max-width: 1280px;margin: auto;}
+
+a{text-decoration: none; color: #000000;}
+
+.allignment
+{
+    display: inline-block;
+    max-width: 300px;
+    font: normal normal 900 20px/24px Lato;
+}
+.patient
+{
+    font: normal normal 900 26px/32px Lato;
+    color: #FFFFFF;
+    padding: 10px;
+    background: #0091AD 0% 0% no-repeat padding-box;
+    border-radius: 22px;
+}
+.d
+{
+    font: normal normal 900 26px/32px Lato;
+    color: #FFFFFF;
+    background: #C14953 0% 0% no-repeat padding-box;
+    border-radius: 22px;
+    padding: 10px 20px
+}
+/* i{font-size: 30px;} */
+section{margin-top: 50px;}
+.nav{background-color: white;height: 75px;padding: 16px;}
+.nav ul{vertical-align: middle;}
+#profile
+{
+max-width: 242px;
+/* height: 333px; */
+/* UI Properties */
+/* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 12px;
+opacity: 1;
+}
+#diagnosis
+{
+
+max-width: 524px;
+font: normal normal normal 12px/15px Lato;
+margin-bottom: 10px;
+/* UI Properties */
+/* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 12px;
+opacity: 1;
+}
+#appointment
+{
+max-width: 242px;
+/* min-height: 180px; */
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 12px;
+opacity: 1;
+}
+
+.img
+{
+    text-align: center;
+    padding-top: 30px;
+    border-bottom: 1px solid #000000;
+    
+}
+.img .name{font: normal normal bold 14px/16px Swansea;margin-bottom: 0;}
+.img .address{font: normal normal normal 12px/15px Lato;}
+
+.img img
+{
+
+max-width: 94px;
+height: 94px;
+margin-bottom: 10px;
+opacity: 1;
+border-radius: 50%;}
+.info
+{
+padding: 8px;
+text-align: left;
+font: normal normal normal 12px/15px Lato;
+color: #000000;
+border-bottom: 1px solid #000000;
+}
+#diagnosis h3{font: normal normal 900 17px/21px Lato;}
+.diagnosis
+{
+max-width: 490px;
+height: 122px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #707070;
+border-radius: 12px;
+margin-bottom: 10px;
+
+}
+.layout-padding{padding: 20px;}
+.layout{border-bottom: 1px solid #000000;margin-bottom: 5px;}
+.medication
+{
+    max-width: 490px;
+height: 41px;
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+border: 1px solid var(--unnamed-color-707070);
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #707070;
+border-radius: 12px;
+opacity: 1;
+}
+.appointment{
+    
+    max-width: 491px;
+    /* height: 38px; */
+}
+.left
+{
+    
+text-align: left;
+font: normal normal normal 14px/16px Lato;
+}
+.right{
+    float: right;
+    font: normal normal normal 14px/16px Lato;
+    margin-top: 10px;
+    }
+img
+{
+    max-width: 40px;
+    height: 38px;
+    border-radius: 50%;
+    background: transparent url('img/img_Doctor.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.appointments
+{
+    /* text-align: center; */
+    padding:  20px;
+}
+#appointment h5{padding-top: 20px;text-align: center;font: normal normal 900 20px/24px Lato;}
+.dr-img{text-align:left;display: inline-block;}
+.dr-app{text-align:right;padding-left:10px;display: inline-block}
+.name{font: normal normal 900 14px/17px Lato;}
+.date{font: normal normal normal 12px/15px Lato;}
+
+.center-speciality
+{
+    padding: 8px;
+    text-align: left;
+    font: normal normal normal 12px/15px Lato;
+    color: #000000;
+}
+
+button
+{
+    width: 60px;
+    height: 25px;
+    background: #C14953 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+    border: transparent;
+    text-align: center;
+    font: normal normal 900 12px/15px Lato;
+    color: #FFFFFF;
+}
+#name{font: normal normal normal 14px/16px Lato;padding:3px 0 5px 20px;}
+.review
+{
+    /* max-width: 230px; */
+    overflow-wrap: break-word;
+    font: normal normal normal 12px/15px Lato;
+}
+/***************************** footer *******************************/
+footer{background: #2C3D55 0% 0% no-repeat padding-box;margin: 0;}
+.content{min-height: 100%;}
+.footer
+{
+    position: relative;
+    
+    max-width: 900px;
+    max-height: 160px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    
+    
+    
+}
+
+
+ul li{list-style: none;padding-bottom: 8px;font: normal normal normal 18px/24px Lato;color: #FFFFFF;}
+ul.right{padding-top: 20px;}

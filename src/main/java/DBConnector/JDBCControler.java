@@ -103,8 +103,15 @@ public class JDBCControler {
 		            
 		            int res = 0;
 		            String crypt_password = null;
-		            String add_user_query = "INSERT INTO mydb.user"
-		            + "(username, password,firstName, secondName, role) VALUE (?,?,?,?,?)";
+		            String add_user_query = "BEGIN;"
+                                    + "INSERT INTO mydb.user (username, password,firstName, secondName, role) "
+                                    + "VALUES(?,?,?,?,?);"
+                                    + "INSERT INTO mydb.contact (User_username,mobile) "
+                                    + "VALUES(?,?);"
+                                    + "INSERT INTO mydb.address (User_username,governate,city,street) "
+                                    + "VALUES(?,?,?,?);"
+                                    + "COMMIT;";
+                         
 		            String crypt_passwd_query = "SELECT MD5('"+user.getPassword()+"')";
 		            
 		            Statement stmt = con.createStatement();
@@ -118,10 +125,16 @@ public class JDBCControler {
 		            PreparedStatement add_user = con.prepareStatement(add_user_query);
 						
 		            add_user.setString(1,user.getusername());
-		            add_user.setString(4,user.getLastName());
-		            add_user.setString(2,crypt_password);
+                            add_user.setString(2,crypt_password);
 		            add_user.setString(3,user.getFirstName());
+		            add_user.setString(4,user.getLastName());
 		            add_user.setString(5,user.getrole());
+                            add_user.setString(6,user.getusername());
+                            add_user.setString(7,user.getMobnumber());
+                            add_user.setString(8,user.getusername());
+                            add_user.setString(9,user.getGovernment());
+                            add_user.setString(10,user.getCity());
+                            add_user.setString(11,user.getAddress());
 		            res = add_user.executeUpdate();
 
 			} catch (ClassNotFoundException e) {
@@ -169,64 +182,7 @@ public class JDBCControler {
 	    
 	        return true;  
 	    }
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 	    public Patient get_patientInfo(String userId){
 	        try{

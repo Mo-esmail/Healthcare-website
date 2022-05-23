@@ -43,20 +43,10 @@ public class LogIn extends HttpServlet {
 				response.sendRedirect(request.getContextPath()+"/html/home.jsp?username="+request.getParameter("uname"));
 		}
 		else{
-		out.println("<!doctype html>\n" +
-				"<html>\n" +
-					"<head>"+
-				"<style>"+
-					"body{"+
-					"background: #48BCE2;"+
-				"}</style>"+
-				"<title>lig in result</title></head>\n" +
-					"<body bgcolor = \"#f0f0f0\">\n" +
-						"<h1 align = \"center\">lig in result</h1>"+
-					"UserName or password invalid"+
-				"</body>"+
-					"</html>"
-						);}
+			out.println("<script type=\"text/javascript\">");  
+			out.println("alert('wrong username or pass');");  
+			out.println("</script>");
+			}
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

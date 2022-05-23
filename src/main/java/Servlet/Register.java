@@ -45,7 +45,7 @@ public class Register extends HttpServlet {
 		System.out.println(request.getParameter("pas"));
 		if(worker.checkUserName(request.getParameter("uname"))) {
 			JDBCControler c = new JDBCControler();
-			c.addUser(new User(request.getParameter("uname"), request.getParameter("pas"), request.getParameter("fname"), request.getParameter("lname"), request.getParameter("fav_language"), "usercol"));
+			c.addUser(new User(request.getParameter("uname"), request.getParameter("pas"), request.getParameter("fname"), request.getParameter("lname"), request.getParameter("fav_language")));
 			response.sendRedirect(request.getContextPath() +"/html/login.html");
 		}else{
 		out.println("<!doctype html>\n" +

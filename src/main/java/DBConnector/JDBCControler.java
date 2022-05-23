@@ -140,20 +140,19 @@ public class JDBCControler {
 		    }
 	    
 	    
-		public boolean get(String username){
+		public User getuser(String username){
 	        try {
 	            Connection con = connector.openConnection();
-	            
-	            String get_passwd_query = "SELECT * FROM mydb.user";
+	            User user;
+	            String get_passwd_query = "SELECT * FROM mydb.user WHERE username =\""+username+"\"";
 	 
 	            Statement stmt = con.createStatement();
 	            
 	            ResultSet result = stmt.executeQuery(get_passwd_query);
-	            while (result.next()) {
+	            if (result.next()) {
 	            	System.out.println(result.getString(1));
-	            	if(username.equals(result.getString(1))) {
-	            		return false;
-	            	}
+	            	user= new User(result.getString(1),result.getString(2),result.getString(3),result.getString(4), result.getString(5));
+	            	return user;
 	            }
 	            result.close();
 	            
@@ -167,11 +166,45 @@ public class JDBCControler {
 	            }
 		}
 	    
-	        return true;  
+	        return null;  
 	    }
 		
+
+		public int search(String specialties){
+	        try {
+	            Connection con = connector.openConnection();
+	            int user=0;
+	            String get_passwd_query = "SELECT * FROM mydb.doctor";
+	 
+	            Statement stmt = con.createStatement();
+	            
+	            ResultSet result = stmt.executeQuery(get_passwd_query);
+	            while(result.next()) {
+	            	
+	            	if(result.getString(5).toLowerCase().contains(specialties.toLowerCase())){
+	            		System.out.println(result.getString(5));
+	            		user++;
+	            	}
+	            }
+	            result.close();
+	            return user;
+	        }catch (ClassNotFoundException | SQLException e) {
+	            
+		}finally {
+	            try {			
+			connector.closeConnection();	
+	            } catch (Exception ex){				
+			ex.printStackTrace();
+	            }
+		}
+	    
+	        return 0;  
+	    }
 		
-		
+	    public static void main(String[] args) {
+			JDBCControler C = new JDBCControler();
+			System.out.println(C.search("pediat"));
+		}
 		
 		
 		
@@ -338,8 +371,5 @@ public class JDBCControler {
 		}
 	        return null;
 	    }
-	    public static void main(String[] args) {
-			JDBCControler C = new JDBCControler();
-			System.out.println(C.checkUser("asd","asd"));
-		}
+
 	}
